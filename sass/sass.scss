@@ -1,0 +1,94 @@
+// 变量
+
+$width : 200px;
+$bg-color:red; // 此处优先级比有default的高。
+$bg-color:#f40 !default; // 定义一个默认值。
+div{
+    background-color:$bg-color; // 编译后是red而不是#f40
+    $width:300px;
+    span{
+        width:$width; // 此处不是200px , 而是 300px
+    }
+}
+
+// 嵌套
+ul{
+  color:#333;
+  li{
+      border:1px solid red;
+      margin:{
+          top:2px;
+          bottom:3px;
+          left:2px;
+      }    
+  }  
+  a{
+      background-color: #f1f1f1;
+      &:hover{ // & 表示父级选择器 和js 中的this挺像的。
+          background-color: #f3f3f3;
+      }
+      &::after{
+          content:"aa";
+      }
+  } 
+  > span{ // > 代表直接子代选择器
+      color:blue;
+  }
+}
+
+// 继承
+
+.btn{
+  color:red;   
+}
+
+.btn-primary{
+  border:1px solid #ddd;
+  @extend .btn;  // 此处使用@extend来继承.btn类中的内容
+}
+
+// 占位符 placeholder
+
+%mt5{
+  margin-top:5px;    
+}
+%pt5{
+  padding-top:5px;   
+}
+
+.box1{
+  width:100px;   
+  @extend %mt5;
+  @extend %pt5;
+}
+
+// 混合宏
+
+@mixin border-radius($border:10px){
+  border-radius:$border;
+  -webkit-border-radius:$border;    
+  -ms-border-radius:$border;
+  -moz-border-radius:$border;
+  -o-border-radius:$border;
+}
+
+.btn{
+  @include border-radius();   
+}
+
+.btn1{
+  @include border-radius(5px);   
+}
+
+@mixin border-radius($a,$b){
+  border-radius:$a;
+  -webkit-border-radius:$a;    
+  -ms-border-radius:$a;
+  -moz-border-radius:$a;
+  -o-border-radius:$a;
+  width:$b;
+}
+
+.btn1{
+  @include border-radius(5px,6px);   
+}

@@ -1,0 +1,75 @@
+div {
+  background-color: red;
+}
+div span {
+  width: 300px;
+}
+
+ul {
+  color: #333;
+}
+ul li {
+  border: 1px solid red;
+  margin-top: 2px;
+  margin-bottom: 3px;
+  margin-left: 2px;
+}
+ul a {
+  background-color: #f1f1f1;
+}
+ul a:hover {
+  background-color: #f3f3f3;
+}
+ul a::after {
+  content: "aa";
+}
+ul > span {
+  color: blue;
+}
+
+.btn, .btn-primary {
+  color: red;
+}
+
+.btn-primary {
+  border: 1px solid #ddd;
+}
+
+.box1 {
+  margin-top: 5px;
+}
+
+.box1 {
+  padding-top: 5px;
+}
+
+.box1 {
+  width: 100px;
+}
+
+.btn, .btn-primary {
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
+.btn1 {
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+.btn1 {
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -o-border-radius: 5px;
+  width: 6px;
+}
+
+/*# sourceMappingURL=sass.css.map */
